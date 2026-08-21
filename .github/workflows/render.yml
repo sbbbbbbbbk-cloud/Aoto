@@ -29,5 +29,5 @@ jobs:
       - name: Send Video Back to n8n
         if: success()
         run: |
-          curl -X POST "${{ github.event.client_payload.webhook_url }}" \
+          curl -g -X POST "${{ github.event.client_payload.webhook_url }}" \
             -F "video=@output.mp4"
